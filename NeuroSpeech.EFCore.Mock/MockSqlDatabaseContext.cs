@@ -19,7 +19,7 @@ namespace NeuroSpeech.EFCore.Mock
     /// <typeparam name="TDbContext">The type of the database context.</typeparam>
     /// <typeparam name="TContextConfiguration">The type of the context configuration.</typeparam>
     /// <seealso cref="NeuroSpeech.EFLocalDBMock.MockDatabaseContext" />
-    public class MockSqlDatabaseContext<TDbContext, TContextConfiguration> : MockDatabaseContext
+    public class MockSqlDatabaseContext<TDbContext> : MockDatabaseContext
         where TDbContext : DbContext, new()
 
     {
