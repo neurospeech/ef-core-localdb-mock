@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.1</TargetFramework>
@@ -7,11 +7,10 @@
     <Product>Mock for EFCore with LocalDB</Product>
     <PackageProjectUrl>https://github.com/neurospeech/ef-core-localdb-mock</PackageProjectUrl>
     <RepositoryUrl>https://github.com/neurospeech/ef-core-localdb-mock</RepositoryUrl>
-    <RepositoryType>Git</RepositoryType>
     <PackageTags>EF Core, LocalDB, Mock</PackageTags>
     <Copyright>2017 NeuroSpeech</Copyright>
     <PackageLicenseUrl>https://github.com/neurospeech/ef-core-localdb-mock/blob/master/LICENSE</PackageLicenseUrl>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Version>1.0.1</Version>
   </PropertyGroup>
 
   <ItemGroup>
