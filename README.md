@@ -1,3 +1,5 @@
+[![NuGet](https://img.shields.io/nuget/v/NeuroSpeech.EFCore.Mock.svg?label=NuGet)](https://www.nuget.org/packages/UIAtoms.Xamarin.Forms)
+
 # ef-core-localdb-mock
 Entity Framework Mocking using SQL Server LocalDB
 
