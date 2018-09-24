@@ -3,7 +3,7 @@ Entity Framework Mocking using SQL Server LocalDB
 
 ```c#
 
-// Assuming you have `AppDbContext` as your EF DbContext in side your actual application project
+    // Assuming you have `AppDbContext` as your EF DbContext in side your actual application project
     // For test purposes, you will have to use AppDbTestContext 
     // or you can use AppDbTestContext as dependency in your DI container
     public class AppDbTestContext : ShopContext
@@ -16,6 +16,11 @@ Entity Framework Mocking using SQL Server LocalDB
 
         // MockDatabaseContext.Current will work correctly with async await
         // without worrying about passing context
+
+        public AppDbTestContext(DbContextOptions options): base(options)
+        {
+
+        }
 
         public AppDbTestContext(): base(Create(MockDatabaseContext.Current.ConnectionString))
         {
@@ -59,7 +64,38 @@ Entity Framework Mocking using SQL Server LocalDB
         }
 
         public void Seed(AppDbTestContext db) {
+            db.Products.Add(new Product {
+                Name = "a"
+            });
 
+            db.SaveChanges();
+
+            DoNotDelete = true;
         }
+    }
+```
+
+Test Case
+
+```c#
+
+    public class DbTest : BaseTest {
+    
+        [Fact]
+        public void Test1() {
+        
+            using(var db = CreateContext()) {
+                 // do test here...
+            }
+            
+            // after this test is finished, database will be deleted automatically
+            // if you want to prevent deletion of database to investigate anything
+            // uncomment following
+            
+            // DoNotDelete = true;
+          
+        }
+    
+    }
 
 ```
